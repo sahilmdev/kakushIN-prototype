@@ -1,0 +1,106 @@
+{
+  "app": {
+    "name": "ArthSaathi",
+    "tagline": "Your financial companion"
+  },
+  "onboarding": {
+    "greeting": "Hello Rajesh",
+    "subgreeting": "Let me understand your financial world before I help.",
+    "buildingProfile": "Building your Financial Fingerprint...",
+    "fingerprintReady": "Your Financial Fingerprint is ready",
+    "questions": [
+      "When did you last feel stressed about money?",
+      "Do you prefer knowing every rupee, or roughly where things stand?",
+      "Have you ever invested money and regretted it?"
+    ],
+    "skip": "Skip intro"
+  },
+  "dashboard": {
+    "greeting": "Good evening, Rajesh",
+    "healthScore": "Financial Health Score",
+    "healthHint": "Good start. Three quick wins ahead",
+    "incomeThisMonth": "Income this month",
+    "schemeAlert": "You qualify for 3 government schemes",
+    "schemeAlertDetail": "Worth over 7 lakh in benefits. Tap to check.",
+    "survivalFloor": "Survival Floor",
+    "stabilityBuffer": "Stability Buffer",
+    "growthZone": "Growth Zone",
+    "recentTransactions": "Recent Transactions",
+    "bufferNeeded": "You need 5,800 more to reach safety buffer",
+    "highRate": "High Rate"
+  },
+  "scam": {
+    "title": "Scam Firewall",
+    "subtitle": "Paste any message to analyse",
+    "placeholder": "Paste any suspicious message, offer, or forward...",
+    "analyze": "Analyse",
+    "analyzing": "Analysing...",
+    "trySample": "Try a sample",
+    "safe": "Looks Clean",
+    "danger": "Scam Detected",
+    "caution": "Use Caution",
+    "detectedTechniques": "Manipulation techniques detected",
+    "whatThisTeaches": "What this teaches you:",
+    "teachingSummary": "Remember these three red flags: guaranteed returns are always a lie, urgency is manufactured to prevent thinking, and no legitimate scheme works through private WhatsApp groups.",
+    "poweredBy": "Powered by ArthSaathi AI"
+  },
+  "twin": {
+    "title": "Financial Twin",
+    "subtitle": "See your two possible futures",
+    "monthlyAmount": "Monthly investment",
+    "riskLevel": "Risk level",
+    "conservative": "Conservative",
+    "balanced": "Balanced",
+    "growth": "Growth",
+    "probability": "Probability of reaching goal",
+    "futureA": "Future A: Savings Account (3.5%)",
+    "futureB": "Future B: Liquid Fund (6.5%)",
+    "atTenYears": "At 10 years",
+    "savingsAccount": "Savings account",
+    "liquidFund": "Liquid fund",
+    "difference": "Difference",
+    "poweredBy": "Powered by ArthSaathi AI"
+  },
+  "schemes": {
+    "title": "Your Scheme Matches",
+    "subtitle": "Based on your profile, you likely qualify",
+    "howToApply": "How to apply",
+    "timeRequired": "Time required",
+    "back": "Back",
+    "closingNote": "One afternoon. That's all it takes. This could save you from borrowing again if you're sick.",
+    "totalBenefits": "Total potential benefits"
+  },
+  "docs": {
+    "title": "Document Intelligence",
+    "subtitle": "Upload any financial document. I'll find what they don't want you to notice.",
+    "upload": "Upload document",
+    "uploadHint": "Tap to upload a loan letter, insurance policy, or bank document",
+    "useSample": "Use QuickCash Loan Agreement",
+    "orUseSample": "or use sample document",
+    "analyzing": "Reading document...",
+    "classifying": "Document classified: Personal Loan",
+    "extracting": "Extracting key clauses...",
+    "checkingInterest": "Checking interest method...",
+    "scanningCharges": "Scanning for hidden charges...",
+    "verifyingFees": "Verifying fee disclosures...",
+    "issuesFound": "issues found",
+    "flagged": "issues flagged",
+    "viewDetail": "View full analysis",
+    "summary30s": "30-second summary",
+    "recommendation": "Recommendation",
+    "poweredBy": "Powered by ArthSaathi AI"
+  },
+  "nav": {
+    "home": "Home",
+    "scam": "Scam Check",
+    "twin": "Future",
+    "schemes": "Schemes",
+    "docs": "Documents"
+  },
+  "voice": {
+    "listening": "Listening...",
+    "say": "Say a page name to navigate",
+    "commands": ["home", "scam firewall", "financial twin", "schemes", "document"],
+    "navigatingTo": "Navigating to"
+  }
+}

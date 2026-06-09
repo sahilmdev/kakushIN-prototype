@@ -1,0 +1,40 @@
+{
+  "documentName": "Personal Loan Agreement — QuickCash Finance Pvt Ltd",
+  "documentType": "Personal Loan",
+  "loanAmount": 25000,
+  "statedRate": "18% per annum",
+  "tenureMonths": 24,
+  "summary": {
+    "level1": {
+      "title": "30-second summary",
+      "content": "This is a personal loan of ₹25,000. You will pay a total of ₹34,840 over 24 months. I found 3 serious issues you should know before signing."
+    },
+    "level2": {
+      "title": "What the 3 issues mean for you",
+      "issues": [
+        {
+          "id": 1,
+          "severity": "high",
+          "flag": "Flat Rate Interest — You're actually paying 33%, not 18%",
+          "explanation": "The loan says 18% p.a. but uses 'flat rate' calculation. This means interest is calculated on the full ₹25,000 every month, even as you repay. The effective annual rate is ~33%. A bank personal loan at the same 18% reducing balance would cost you ₹4,200 less.",
+          "clause": "Clause 4.2: 'Interest shall be calculated at 18% per annum on the original principal amount throughout the loan tenure.'"
+        },
+        {
+          "id": 2,
+          "severity": "high",
+          "flag": "Prepayment penalty of 5% — you're trapped",
+          "explanation": "If you get extra money and want to close this loan early, you pay a 5% penalty on the outstanding amount. This discourages you from getting out of debt faster. Most RBI-regulated lenders cannot charge prepayment penalty on floating rate loans.",
+          "clause": "Clause 7.1: 'Prepayment or foreclosure of the loan shall attract a charge of 5% of the outstanding principal, plus applicable GST.'"
+        },
+        {
+          "id": 3,
+          "severity": "medium",
+          "flag": "Processing fee is NOT part of the stated ₹25,000",
+          "explanation": "A processing fee of ₹1,250 (5% of loan) plus 18% GST = ₹1,475 is deducted before disbursement. You'll receive ₹23,525, but repay based on ₹25,000. Your effective loan amount received is lower than what you're paying on.",
+          "clause": "Clause 2.4: 'A processing fee of 5% of the loan amount shall be deducted at disbursement. This fee is non-refundable.'"
+        }
+      ]
+    }
+  },
+  "recommendation": "Before signing: Ask the lender to show you the amortization schedule with reducing balance interest. If they can't provide it, walk away. A Kisan Credit Card or a salary advance from an employer would cost significantly less."
+}

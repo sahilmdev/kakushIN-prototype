@@ -1,0 +1,61 @@
+[
+  {
+    "id": "pmjay",
+    "name": "Ayushman Bharat PM-JAY",
+    "shortName": "PM-JAY",
+    "benefit": "₹5 lakh health coverage",
+    "benefitAmount": 500000,
+    "description": "Free health insurance of ₹5 lakh per year for hospitalisation",
+    "matchReason": "Your income (₹18,500/month) is below the ₹25,000 eligibility threshold. No existing health insurance detected.",
+    "matchScore": 97,
+    "matchBadge": "97% match",
+    "icon": "shield-plus",
+    "color": "#22C55E",
+    "applicationSteps": [
+      { "step": 1, "title": "Find your nearest CSC centre", "detail": "Visit locator.csccloud.in — there are 3 centres within 5km of your PIN code (411001).", "time": "10 min" },
+      { "step": 2, "title": "Carry these documents", "detail": "Aadhaar card (original + copy), ration card if available, income proof (any 2 Zomato/Swiggy payment screenshots).", "time": "Prepare beforehand" },
+      { "step": 3, "title": "Get your e-card generated", "detail": "The CSC operator will verify your eligibility on PMJAY portal and generate your Golden Card on the spot.", "time": "20-30 min at CSC" },
+      { "step": 4, "title": "Download and save the e-card", "detail": "Save the card PDF to your phone. You can also access it anytime at beneficiary.nha.gov.in", "time": "2 min" }
+    ],
+    "potentialSaving": "Protects against a single hospitalisation bill that could otherwise wipe out months of income."
+  },
+  {
+    "id": "epfo",
+    "name": "EPFO Unorganised Worker Registration",
+    "shortName": "e-SHRAM",
+    "benefit": "₹2 lakh accident cover + future pension",
+    "benefitAmount": 200000,
+    "description": "National database for unorganised workers with accident insurance and social security benefits",
+    "matchReason": "Gig workers are explicitly covered. Registration takes 10 minutes with just Aadhaar + mobile number.",
+    "matchScore": 94,
+    "matchBadge": "94% match",
+    "icon": "users",
+    "color": "#6C63FF",
+    "applicationSteps": [
+      { "step": 1, "title": "Go to eshram.gov.in", "detail": "Open on your phone browser. No app needed.", "time": "1 min" },
+      { "step": 2, "title": "Register with Aadhaar + mobile OTP", "detail": "Your mobile number must be linked to Aadhaar. If not, update at nearest Aadhaar centre first.", "time": "5 min" },
+      { "step": 3, "title": "Fill occupation details", "detail": "Select 'Transport' → 'Delivery Worker' from the dropdown. Add your bank account for future benefit transfers.", "time": "5 min" },
+      { "step": 4, "title": "Download your e-SHRAM card", "detail": "UAN (Universal Account Number) is generated instantly. The ₹2 lakh accident cover is active immediately.", "time": "1 min" }
+    ],
+    "potentialSaving": "₹2 lakh accident insurance is free. Future social security benefits will compound over your working years."
+  },
+  {
+    "id": "pmsby",
+    "name": "Pradhan Mantri Suraksha Bima Yojana",
+    "shortName": "PMSBY",
+    "benefit": "₹2 lakh accident insurance @ ₹20/year",
+    "benefitAmount": 200000,
+    "description": "Accidental death and disability insurance for ₹20 per year — cheapest insurance in India",
+    "matchReason": "Any bank account holder aged 18-70 qualifies. You have a savings account. You're currently uninsured.",
+    "matchScore": 99,
+    "matchBadge": "99% match",
+    "icon": "life-buoy",
+    "color": "#F59E0B",
+    "applicationSteps": [
+      { "step": 1, "title": "Open your bank's app or visit branch", "detail": "Available at all public sector banks and most private banks. Can be done in net banking under 'Insurance' tab.", "time": "5 min" },
+      { "step": 2, "title": "Select PMSBY and link your savings account", "detail": "₹20 is auto-debited from your account on June 1 each year. That's less than one delivery order.", "time": "2 min" },
+      { "step": 3, "title": "Note your policy number", "detail": "Save the SMS confirmation. Nominees can claim ₹2 lakh in case of accidental death or full disability.", "time": "1 min" }
+    ],
+    "potentialSaving": "₹20/year for ₹2 lakh coverage. If you skip one chai, your family is protected for a year."
+  }
+]

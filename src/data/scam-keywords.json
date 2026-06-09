@@ -1,0 +1,49 @@
+{
+  "patterns": [
+    {
+      "id": "guaranteed-returns",
+      "keywords": ["guaranteed return", "guaranteed profit", "fixed return", "pakka return", "guaranteed 40%", "guaranteed 30%", "guaranteed 20%", "100% return", "assured return", "fixed 2% daily", "2% per day"],
+      "severity": "high",
+      "technique": "False Promise of Safety",
+      "explanation": "No legitimate investment can legally guarantee returns. SEBI explicitly prohibits this. Anyone promising guaranteed returns is either lying or running an illegal scheme.",
+      "legalContext": "Prohibited under SEBI (Investment Advisers) Regulations, 2013"
+    },
+    {
+      "id": "urgency",
+      "keywords": ["offer ends tonight", "last 24 hours", "limited slots", "only 10 spots", "expires today", "act now", "don't miss", "abhi karo", "kal se band", "sirf aaj", "last chance"],
+      "severity": "medium",
+      "technique": "Artificial Urgency (FOMO)",
+      "explanation": "Creating a fake deadline forces you to make a rushed decision without researching. Legitimate investments are available tomorrow. Fake ones need you to act before you think.",
+      "legalContext": "Common in Ponzi schemes and pump-and-dump operations"
+    },
+    {
+      "id": "exclusivity",
+      "keywords": ["only for you", "secret scheme", "exclusive members", "VIP group", "referral only", "select few", "sirf aapke liye", "special invite", "private group", "WhatsApp group"],
+      "severity": "medium",
+      "technique": "False Exclusivity",
+      "explanation": "Making you feel specially chosen lowers your guard and makes you feel you'd be foolish to refuse. Real financial products don't work through secret WhatsApp groups.",
+      "legalContext": "Classic social engineering used in pyramid and MLM schemes"
+    },
+    {
+      "id": "authority-impersonation",
+      "keywords": ["RBI approved", "SEBI approved", "government scheme", "PM modi scheme", "government approved", "RBI registered", "authorised by government", "RBI certified"],
+      "severity": "high",
+      "technique": "Authority Impersonation",
+      "explanation": "Using RBI or SEBI's name creates false trust. The RBI does not approve individual investment schemes. SEBI does not endorse specific returns. Always verify at sebi.gov.in or rbi.org.in directly.",
+      "legalContext": "Impersonating government bodies is a criminal offense under IPC Section 416"
+    },
+    {
+      "id": "social-proof",
+      "keywords": ["1000 people joined", "lakhs earning", "mera profit", "log kamaare", "everyone is doing", "my friend earned", "neighbour ne kiya", "already 50,000 members"],
+      "severity": "low",
+      "technique": "Fake Social Proof",
+      "explanation": "Claiming thousands of happy investors creates a herd mentality. These numbers are unverifiable. In Ponzi schemes, early investors do genuinely earn — until the scheme collapses and everyone else loses.",
+      "legalContext": "Fraudulent misrepresentation under IPC Section 420"
+    }
+  ],
+  "safeMessage": {
+    "title": "Looks clean",
+    "description": "No manipulation tactics detected in this message. That said, always verify company registration at sebi.gov.in before investing.",
+    "color": "success"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "name": "Rajesh Kumar",
+    "age": 34,
+    "city": "Pune",
+    "occupation": "Delivery Partner (Zomato/Swiggy)",
+    "language": "hi",
+    "incomeType": "irregular",
+    "fingerprint": {
+      "riskProfile": "loss-averse",
+      "trustProfile": "skeptical-of-banks",
+      "literacyBaseline": "basic",
+      "incomeTier": "variable-gig",
+      "stressTriggers": ["debt", "job-insecurity"],
+      "preferenceStyle": "simple-numbers"
+    },
+    "healthScore": {
+      "initial": 47,
+      "current": 47,
+      "max": 100,
+      "components": {
+        "emergencyFund": 20,
+        "debtControl": 35,
+        "savingsHabit": 55,
+        "fraudProtection": 80
+      }
+    }
+  },
+  "income": {
+    "monthlyMedian": 18500,
+    "monthlyMin": 11000,
+    "monthlyMax": 32000,
+    "lastThreeMonths": [15200, 21800, 17400],
+    "survivalFloor": 9800,
+    "stabilityBuffer": 8000,
+    "currentBuffer": 2200
+  },
+  "transactions": [
+    { "id": 1, "date": "2024-11-28", "description": "Zomato payout", "amount": 4200, "type": "income", "category": "gig" },
+    { "id": 2, "date": "2024-11-27", "description": "Rent", "amount": -5500, "type": "expense", "category": "housing" },
+    { "id": 3, "date": "2024-11-26", "description": "Swiggy payout", "amount": 3100, "type": "income", "category": "gig" },
+    { "id": 4, "date": "2024-11-25", "description": "EarlySalary repayment", "amount": -1200, "type": "expense", "category": "debt" },
+    { "id": 5, "date": "2024-11-24", "description": "Grocery - BigBazaar", "amount": -1850, "type": "expense", "category": "food" },
+    { "id": 6, "date": "2024-11-23", "description": "Zomato payout", "amount": 2800, "type": "income", "category": "gig" },
+    { "id": 7, "date": "2024-11-22", "description": "Phone recharge", "amount": -299, "type": "expense", "category": "utilities" },
+    { "id": 8, "date": "2024-11-21", "description": "Swiggy payout", "amount": 3600, "type": "income", "category": "gig" },
+    { "id": 9, "date": "2024-11-20", "description": "Fuel", "amount": -800, "type": "expense", "category": "transport" },
+    { "id": 10, "date": "2024-11-19", "description": "MoneyTap loan interest", "amount": -640, "type": "expense", "category": "debt" }
+  ],
+  "debts": [
+    { "name": "EarlySalary", "principal": 8000, "monthlyEMI": 1200, "annualRate": 36, "type": "predatory-app" },
+    { "name": "MoneyTap", "principal": 5000, "monthlyEMI": 640, "annualRate": 24, "type": "predatory-app" }
+  ],
+  "goals": [
+    { "id": "emergency", "name": "Emergency Fund", "target": 30000, "current": 2200, "priority": 1, "status": "critical" },
+    { "id": "bike", "name": "New Bike (work)", "target": 45000, "current": 0, "priority": 2, "status": "not-started" }
+  ]
+}
