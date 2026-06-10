@@ -78,7 +78,8 @@ export function useVoiceNav() {
       
       recognition.onerror = (event) => {
          console.warn("Speech recognition error", event.error);
-         if (event.error === 'not-allowed' || event.error === 'audio-capture') {
+         // Stop listening on fatal errors or network disconnects
+         if (event.error === 'not-allowed' || event.error === 'audio-capture' || event.error === 'network') {
             shouldListenRef.current = false;
             setIsListening(false);
          }
