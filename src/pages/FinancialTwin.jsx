@@ -44,7 +44,7 @@ export default function FinancialTwin() {
         <div className="col-span-2 space-y-4">
           <div className="bg-white border border-border-light rounded-2xl p-6 shadow-card">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-display font-bold text-text-primary text-[15px]">Investment Plan</h3>
+              <h3 className="font-display font-bold text-text-primary text-[15px]">{t('twin.investmentPlan')}</h3>
               <Target size={18} className="text-primary" />
             </div>
             
@@ -94,7 +94,7 @@ export default function FinancialTwin() {
           </div>
 
           <div className="bg-white border border-border-light rounded-2xl p-6 shadow-card">
-            <h3 className="font-display font-bold text-text-primary text-[15px] mb-4">10-Year Outlook</h3>
+            <h3 className="font-display font-bold text-text-primary text-[15px] mb-4">{t('twin.tenYearOutlook')}</h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center p-3 bg-app-bg rounded-xl">
                 <span className="text-text-secondary text-sm">{t('twin.savingsAccount')}</span>
@@ -122,15 +122,15 @@ export default function FinancialTwin() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-danger" />
-                  <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">Pessimistic</span>
+                  <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">{t('twin.pessimistic')}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-primary" />
-                  <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">Median</span>
+                  <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">{t('twin.median')}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-success" />
-                  <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">Optimistic</span>
+                  <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">{t('twin.optimistic')}</span>
                 </div>
               </div>
               <TrendingUp size={20} className="text-text-muted" />

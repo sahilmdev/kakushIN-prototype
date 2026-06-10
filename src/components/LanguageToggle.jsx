@@ -4,6 +4,13 @@ const LANGS = [
   { code: 'en', label: 'EN' },
   { code: 'hi', label: 'हि' },
   { code: 'mr', label: 'म' },
+  { code: 'bn', label: 'বাং' },
+  { code: 'ta', label: 'தம' },
+  { code: 'te', label: 'తెలు' },
+  { code: 'gu', label: 'ગુજ' },
+  { code: 'kn', label: 'ಕನ್' },
+  { code: 'ml', label: 'മല' },
+  { code: 'pa', label: 'ਪੰ' },
 ];
 
 export default function LanguageToggle() {
@@ -11,7 +18,7 @@ export default function LanguageToggle() {
 
   return (
     <div
-      className="flex rounded-xl bg-surface-raised border border-border p-0.5 shadow-sm"
+      className="flex rounded-xl bg-surface-raised border border-border p-0.5 shadow-sm flex-wrap"
       role="radiogroup"
       aria-label="Language selection"
     >

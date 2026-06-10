@@ -7,7 +7,20 @@ import PageHeader from '../components/PageHeader';
 import { analyzeMessage } from '../utils/scamAnalysis';
 import { useHealthScoreContext } from '../context/HealthScoreContext';
 
-const SAMPLE_TEXT = "CONGRATULATIONS! You have been selected for a WORK FROM HOME job. Earn ₹5000 daily by just liking YouTube videos. No experience needed. Join our Telegram group NOW to start: https://t.me/quick_earn_india. LIMITED SLOTS LEFT!";
+const SAMPLES = [
+  {
+    title: "Job Scam",
+    text: "CONGRATULATIONS! You have been selected for a WORK FROM HOME job. Earn ₹5000 daily by just liking YouTube videos. No experience needed. Join our Telegram group NOW to start: https://t.me/quick_earn_india. LIMITED SLOTS LEFT!"
+  },
+  {
+    title: "OTP Fraud",
+    text: "Your SBI account has been blocked due to suspicious activity. To verify your identity, enter the OTP sent to your mobile number. Hurry, your account will be permanently closed in 30 minutes!"
+  },
+  {
+    title: "Electricity Bill Scam",
+    text: "URGENT: Your electricity bill for this month is pending. Click here to pay now and avoid disconnection: https://bit.ly/fake-bill-link"
+  }
+];
 
 const SEVERITY_CONFIG = {
   danger: {
@@ -15,21 +28,21 @@ const SEVERITY_CONFIG = {
     border: 'border-danger-mid',
     text: 'text-danger',
     icon: AlertTriangle,
-    label: 'HIGH RISK'
+    labelKey: 'scam.highRisk'
   },
   warning: {
     bg: 'bg-warning-light',
     border: 'border-warning-mid',
     text: 'text-warning',
     icon: AlertCircle,
-    label: 'CAUTION'
+    labelKey: 'scam.caution'
   },
   safe: {
     bg: 'bg-success-light',
     border: 'border-success-mid',
     text: 'text-success',
     icon: ShieldCheck,
-    label: 'LOW RISK'
+    labelKey: 'scam.lowRisk'
   },
 };
 
@@ -40,6 +53,8 @@ export default function ScamFirewall() {
   const [status, setStatus] = useState('idle'); // idle, analyzing, done
   const [result, setResult] = useState(null);
   const [expandedIds, setExpandedIds] = useState([]);
+
+  const samples = t('scam.samples', { returnObjects: true }) || [];
 
   const handleAnalyse = () => {
     if (!inputText.trim()) return;
@@ -84,21 +99,36 @@ export default function ScamFirewall() {
               className="w-full bg-app-bg border border-border-medium rounded-xl p-4 text-text-primary text-sm font-body resize-none focus:outline-none focus:border-primary transition-colors placeholder:text-text-muted"
             />
             
-            <div className="flex gap-3 mt-4">
+            <div className="flex flex-wrap gap-2 mb-3">
+              {SAMPLES.map((sample, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setInputText(sample.text);
+                    setStatus('idle');
+                    setResult(null);
+                  }}
+                  className="border border-primary/20 text-primary hover:bg-primary-light rounded-lg px-3 py-1.5 text-xs font-semibold transition-all"
+                >
+                  {sample.title}
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-3 mt-2">
               <button
                 onClick={() => {
-                  setInputText(SAMPLE_TEXT);
+                  setInputText('');
                   setStatus('idle');
                   setResult(null);
                 }}
-                className="flex-1 border border-primary/20 text-primary hover:bg-primary-light rounded-xl px-4 py-3 text-[14px] font-semibold transition-all"
+                className="border border-border-light text-text-secondary hover:bg-app-bg rounded-xl px-4 py-3 text-[14px] font-semibold transition-all"
               >
-                {t('scam.trySample')}
+                {t('scam.clear')}
               </button>
               <button
                 onClick={handleAnalyse}
                 disabled={!inputText.trim() || status === 'analyzing'}
-                className="flex-2 bg-primary hover:bg-primary-dark text-white rounded-xl px-4 py-3 text-[14px] font-semibold transition-all disabled:opacity-40 shadow-blue"
+                className="flex-1 bg-primary hover:bg-primary-dark text-white rounded-xl px-4 py-3 text-[14px] font-semibold transition-all disabled:opacity-40 shadow-blue"
               >
                 {status === 'analyzing' ? t('scam.analyzing') : t('scam.analyze')}
               </button>
@@ -138,14 +168,14 @@ export default function ScamFirewall() {
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-0.5">
                             <span className={`text-[10px] font-bold uppercase tracking-wider ${sev.text}`}>
-                              {sev.label}
+                              {t(sev.labelKey)}
                             </span>
                           </div>
                           <h4 className="font-display font-bold text-[15px] text-text-primary">
-                            {finding.technique}
+                            {t(`scamPatterns.${finding.id}.technique`, { defaultValue: finding.technique })}
                           </h4>
                           <p className="text-text-secondary text-xs mt-1">
-                            Detected keyword: <span className="font-mono font-semibold">"{finding.matchedKeyword}"</span>
+                            {t('scam.detectedKeyword')}: <span className="font-mono font-semibold">"{finding.matchedKeyword}"</span>
                           </p>
                         </div>
                         <div className="mt-2">
@@ -163,12 +193,12 @@ export default function ScamFirewall() {
                           >
                             <div className="space-y-3">
                               <p className="text-text-primary text-sm leading-relaxed font-body">
-                                {finding.explanation}
+                                {t(`scamPatterns.${finding.id}.explanation`, { defaultValue: finding.explanation })}
                               </p>
                               <div className="p-3 bg-app-bg rounded-lg border-l-4 border-primary/30">
-                                <p className="text-text-secondary text-[11px] font-medium uppercase tracking-wider mb-1">Legal Context</p>
+                                <p className="text-text-secondary text-[11px] font-bold uppercase tracking-wider mb-1">{t('scam.legalContext')}</p>
                                 <p className="text-text-primary text-[13px] font-body leading-relaxed">
-                                  {finding.legalContext}
+                                  {t(`scamPatterns.${finding.id}.legalContext`, { defaultValue: finding.legalContext })}
                                 </p>
                               </div>
                             </div>
@@ -189,7 +219,7 @@ export default function ScamFirewall() {
                         {t('scam.safe')}
                       </h4>
                       <p className="text-text-secondary text-sm mt-1 font-body leading-relaxed">
-                        No common manipulation patterns found. However, always verify company registrations at <span className="text-primary font-semibold">sebi.gov.in</span> before sharing any OTP or making payments.
+                        {t('scam.noPatternsFound')}
                       </p>
                     </div>
                   </div>
@@ -204,30 +234,30 @@ export default function ScamFirewall() {
           <div className="bg-white border border-border-light rounded-2xl p-6 shadow-card">
             <h3 className="font-display font-bold text-text-primary mb-4 flex items-center gap-2">
               <ShieldAlert size={18} className="text-primary" />
-              How it works
+              {t('scam.howItWorks')}
             </h3>
             <div className="space-y-4">
               <div className="flex gap-3">
                 <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">1</div>
-                <p className="text-text-secondary text-xs leading-relaxed font-body">Paste any WhatsApp message, job offer, or SMS that seems too good to be true.</p>
+                <p className="text-text-secondary text-xs leading-relaxed font-body">{t('scam.step1Desc')}</p>
               </div>
               <div className="flex gap-3">
                 <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">2</div>
-                <p className="text-text-secondary text-xs leading-relaxed font-body">Our AI scans for psychological triggers like "Urgency", "Guaranteed Returns", and "Unverified Links".</p>
+                <p className="text-text-secondary text-xs leading-relaxed font-body">{t('scam.step2Desc')}</p>
               </div>
               <div className="flex gap-3">
                 <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">3</div>
-                <p className="text-text-secondary text-xs leading-relaxed font-body">We provide the specific technique being used to manipulate you and the legal context.</p>
+                <p className="text-text-secondary text-xs leading-relaxed font-body">{t('scam.step3Desc')}</p>
               </div>
             </div>
           </div>
 
           <div className="bg-sidebar rounded-2xl p-6 shadow-card text-white">
             <h4 className="font-display font-bold text-[15px] mb-3 text-primary-light">
-              Pro-Tip for Rajesh
+              {t('scam.proTipForRajesh')}
             </h4>
             <p className="text-slate-400 text-xs leading-relaxed font-body italic">
-              "Remember: If a job asks you to pay money to start working, it is 100% a scam. No legitimate company in India works this way."
+              "{t('scam.proTipText')}"
             </p>
           </div>
         </div>

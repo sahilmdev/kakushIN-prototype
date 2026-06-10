@@ -7,19 +7,20 @@ export function calculateProjections(monthlyAmount, riskLevel) {
   };
   const r = rates[riskLevel];
 
-  const calc = (rate) =>
-    years.map((y) => ({
-      year: y,
-      value: Math.round(
-        monthlyAmount * 12 * ((Math.pow(1 + rate, y) - 1) / rate) * (1 + rate)
-      ),
-    }));
+  // Monthly compounding formula: A = P * (((1 + r/12)^(12*y) - 1) / (r/12)) * (1 + r/12)
+  const calcMonthlyCompounding = (annualRate, yearsCount) => {
+    const monthlyRate = annualRate / 12;
+    const totalMonths = yearsCount * 12;
+    return Math.round(
+      monthlyAmount * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate)
+    );
+  };
 
   const chartData = years.map((y) => {
-    const pessimistic = Math.round(monthlyAmount * 12 * ((Math.pow(1 + r.pessimistic, y) - 1) / r.pessimistic) * (1 + r.pessimistic));
-    const median = Math.round(monthlyAmount * 12 * ((Math.pow(1 + r.median, y) - 1) / r.median) * (1 + r.median));
-    const optimistic = Math.round(monthlyAmount * 12 * ((Math.pow(1 + r.optimistic, y) - 1) / r.optimistic) * (1 + r.optimistic));
-    const savings = Math.round(monthlyAmount * 12 * y * 1.035);
+    const pessimistic = calcMonthlyCompounding(r.pessimistic, y);
+    const median = calcMonthlyCompounding(r.median, y);
+    const optimistic = calcMonthlyCompounding(r.optimistic, y);
+    const savings = calcMonthlyCompounding(0.035, y); // Savings account at 3.5% annual
     
     return {
       year: y,

@@ -1,25 +1,27 @@
 import { createContext, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const HealthScoreContext = createContext();
 
 export function HealthScoreProvider({ children }) {
+  const { t } = useTranslation();
   const [score, setScore] = useState(47);
   const [firedEvents, setFiredEvents] = useState([]);
   const [toast, setToast] = useState(null);
 
   const triggerEvent = (eventType) => {
     const boosts = {
-      'scam-detected': { points: 8, label: '+8 Fraud Awareness' },
-      'scheme-viewed': { points: 6, label: '+6 Benefit Unlocked' },
-      'document-analysed': { points: 7, label: '+7 Contract Literacy' },
-      'twin-explored': { points: 4, label: '+4 Future Planning' },
+      'scam-detected': { points: 8, labelKey: 'scam-detected' },
+      'scheme-viewed': { points: 6, labelKey: 'scheme-viewed' },
+      'document-analysed': { points: 7, labelKey: 'document-analysed' },
+      'twin-explored': { points: 4, labelKey: 'twin-explored' },
     };
     if (firedEvents.includes(eventType)) return;
     const boost = boosts[eventType];
     if (!boost) return;
     setScore((prev) => Math.min(prev + boost.points, 72));
     setFiredEvents((prev) => [...prev, eventType]);
-    setToast(boost.label);
+    setToast(t(`boosts.${boost.labelKey}`));
     setTimeout(() => setToast(null), 2500);
   };
 

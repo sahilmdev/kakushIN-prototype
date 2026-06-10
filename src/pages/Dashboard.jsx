@@ -39,32 +39,32 @@ export default function Dashboard() {
       <div className="grid grid-cols-4 gap-4 mb-6">
         {/* Income Card */}
         <div className="bg-white border border-border-light rounded-2xl p-5 shadow-card">
-          <p className="text-text-secondary text-xs font-body uppercase tracking-wider mb-1">Income</p>
+          <p className="text-text-secondary text-xs font-body uppercase tracking-wider mb-1">{t('dashboard.income')}</p>
           <p className="font-mono text-3xl font-semibold text-text-primary tracking-tight">
             ₹{income.lastThreeMonths[2].toLocaleString('en-IN')}
           </p>
           <p className="text-success text-xs font-body mt-1 flex items-center gap-1">
             <ArrowUpRight size={12} />
-            This month
+            {t('dashboard.thisMonth')}
           </p>
         </div>
 
         {/* Floor Card */}
         <div className="bg-white border border-border-light rounded-2xl p-5 shadow-card">
-          <p className="text-text-secondary text-xs font-body uppercase tracking-wider mb-1">Floor</p>
+          <p className="text-text-secondary text-xs font-body uppercase tracking-wider mb-1">{t('dashboard.floor')}</p>
           <p className="font-mono text-3xl font-semibold text-text-primary tracking-tight">
             ₹{income.survivalFloor.toLocaleString('en-IN')}
           </p>
-          <p className="text-text-secondary text-xs font-body mt-1">Survival minimum</p>
+          <p className="text-text-secondary text-xs font-body mt-1">{t('dashboard.survivalMinimum')}</p>
         </div>
 
         {/* Buffer Card */}
         <div className="bg-white border border-border-light rounded-2xl p-5 shadow-card">
-          <p className="text-text-secondary text-xs font-body uppercase tracking-wider mb-1">Buffer</p>
+          <p className="text-text-secondary text-xs font-body uppercase tracking-wider mb-1">{t('dashboard.buffer')}</p>
           <p className="font-mono text-3xl font-semibold text-text-primary tracking-tight">
             ₹{income.currentBuffer.toLocaleString('en-IN')}
           </p>
-          <p className="text-warning text-xs font-body mt-1">Current savings</p>
+          <p className="text-warning text-xs font-body mt-1">{t('dashboard.currentSavings')}</p>
         </div>
 
         {/* Health Score Card */}
@@ -73,7 +73,7 @@ export default function Dashboard() {
             <HealthScoreRing score={score} size={80} strokeWidth={6} />
           </div>
           <div>
-            <p className="text-text-secondary text-xs font-body uppercase tracking-wider">Score</p>
+            <p className="text-text-secondary text-xs font-body uppercase tracking-wider">{t('dashboard.score')}</p>
             <p className="font-mono text-2xl font-bold text-text-primary">{score}/100</p>
           </div>
         </div>
@@ -83,26 +83,26 @@ export default function Dashboard() {
         {/* Income Breakdown */}
         <div className="col-span-3 bg-white border border-border-light rounded-2xl shadow-card overflow-hidden">
           <div className="px-6 py-4 border-b border-app-bg">
-            <h2 className="font-display text-[15px] font-semibold text-text-primary">Income Tier Breakdown</h2>
+            <h2 className="font-display text-[15px] font-semibold text-text-primary">{t('dashboard.incomeTierBreakdown')}</h2>
           </div>
           <div className="px-6 py-5 space-y-4">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <span className="text-text-secondary text-xs font-body w-24 text-right">Survival Floor</span>
+                <span className="text-text-secondary text-xs font-body w-24 text-right">{t('dashboard.survivalFloor')}</span>
                 <div className="flex-1 h-2.5 bg-app-bg rounded-full overflow-hidden">
                   <div className="h-full bg-danger/70 rounded-full" style={{ width: `${(income.survivalFloor / income.monthlyMedian) * 100}%` }} />
                 </div>
                 <span className="font-mono text-text-primary text-xs w-16">₹{income.survivalFloor.toLocaleString('en-IN')}</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-text-secondary text-xs font-body w-24 text-right">Safety Buffer</span>
+                <span className="text-text-secondary text-xs font-body w-24 text-right">{t('dashboard.stabilityBuffer')}</span>
                 <div className="flex-1 h-2.5 bg-app-bg rounded-full overflow-hidden">
                   <div className="h-full bg-warning rounded-full" style={{ width: `${(income.currentBuffer / income.stabilityBuffer) * 100}%` }} />
                 </div>
                 <span className="font-mono text-warning text-xs w-16">₹{income.currentBuffer.toLocaleString('en-IN')}</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-text-muted text-xs font-body w-24 text-right">Growth Zone</span>
+                <span className="text-text-muted text-xs font-body w-24 text-right">{t('dashboard.growthZone')}</span>
                 <div className="flex-1 h-2.5 bg-app-bg rounded-full overflow-hidden">
                   <div className="h-full bg-success/40 rounded-full" style={{ width: '0%' }} />
                 </div>
@@ -120,20 +120,20 @@ export default function Dashboard() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Zap size={18} className="text-primary fill-primary" />
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">Scheme Alert</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">{t('dashboard.schemeAlertLabel')}</span>
             </div>
             <h3 className="font-display font-bold text-lg text-text-primary leading-tight">
-              3 government schemes found
+              {t('dashboard.schemesFound')}
             </h3>
             <p className="text-text-secondary text-sm mt-2 font-body">
-              Total potential benefits worth over ₹7.2 lakh. You are 97% likely to qualify.
+              {t('dashboard.schemesDetail')}
             </p>
           </div>
           <button 
             onClick={() => navigate('/schemes')}
             className="mt-4 bg-primary hover:bg-primary-dark text-white font-body text-[14px] font-semibold px-4 py-2.5 rounded-xl shadow-blue transition-all"
           >
-            View Schemes →
+            {t('dashboard.viewSchemes')} →
           </button>
         </div>
       </div>
@@ -142,8 +142,8 @@ export default function Dashboard() {
         {/* Transactions */}
         <div className="bg-white border border-border-light rounded-2xl shadow-card overflow-hidden">
           <div className="px-6 py-4 border-b border-app-bg flex justify-between items-center">
-            <h2 className="font-display text-[15px] font-semibold text-text-primary">Recent Transactions</h2>
-            <button className="text-primary text-xs font-semibold hover:underline">View all</button>
+            <h2 className="font-display text-[15px] font-semibold text-text-primary">{t('dashboard.recentTransactions')}</h2>
+            <button className="text-primary text-xs font-semibold hover:underline">{t('dashboard.viewAll')}</button>
           </div>
           <div className="p-2">
             {recentTransactions.map((tx) => {
@@ -155,7 +155,9 @@ export default function Dashboard() {
                     <Icon size={16} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-text-primary text-sm font-medium truncate">{tx.description}</p>
+                    <p className="text-text-primary text-sm font-medium truncate">
+                      {t(`transactions.${tx.description.toLowerCase()}`, { defaultValue: tx.description })}
+                    </p>
                     <p className="text-text-muted text-[11px] font-body">
                       {new Date(tx.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
                     </p>
@@ -172,7 +174,7 @@ export default function Dashboard() {
         {/* Debt Tracker */}
         <div className="bg-white border border-border-light rounded-2xl shadow-card overflow-hidden">
           <div className="px-6 py-4 border-b border-app-bg">
-            <h2 className="font-display text-[15px] font-semibold text-text-primary">Debt Tracker</h2>
+            <h2 className="font-display text-[15px] font-semibold text-text-primary">{t('dashboard.debtTracker')}</h2>
           </div>
           <div className="p-4 space-y-3">
             <div className="p-3 bg-danger-light border border-danger-mid rounded-xl flex items-center justify-between">
@@ -181,8 +183,8 @@ export default function Dashboard() {
                   <AlertTriangle size={16} />
                 </div>
                 <div>
-                  <p className="text-text-primary text-sm font-semibold">QuickCash Loan</p>
-                  <p className="text-danger text-[10px] font-bold uppercase tracking-wider">36% interest</p>
+                  <p className="text-text-primary text-sm font-semibold">{t('dashboard.quickCashLoan')}</p>
+                  <p className="text-danger text-[10px] font-bold uppercase tracking-wider">36% {t('dashboard.highRate')}</p>
                 </div>
               </div>
               <span className="font-mono text-sm font-bold text-text-primary">₹8,000</span>
@@ -193,14 +195,14 @@ export default function Dashboard() {
                   <AlertTriangle size={16} />
                 </div>
                 <div>
-                  <p className="text-text-primary text-sm font-semibold">MoneyTap</p>
-                  <p className="text-warning text-[10px] font-bold uppercase tracking-wider">24% interest</p>
+                  <p className="text-text-primary text-sm font-semibold">{t('dashboard.moneyTap')}</p>
+                  <p className="text-warning text-[10px] font-bold uppercase tracking-wider">24% {t('dashboard.highRate')}</p>
                 </div>
               </div>
               <span className="font-mono text-sm font-bold text-text-primary">₹5,000</span>
             </div>
             <div className="pt-2 border-t border-app-bg flex justify-between items-center px-1">
-              <span className="text-text-secondary text-xs font-medium">Combined Monthly EMI</span>
+              <span className="text-text-secondary text-xs font-medium">{t('dashboard.combinedMonthlyEMI')}</span>
               <span className="font-mono text-sm font-bold text-text-primary">₹1,840/mo</span>
             </div>
           </div>

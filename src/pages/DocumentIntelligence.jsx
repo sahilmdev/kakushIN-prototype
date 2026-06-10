@@ -20,14 +20,14 @@ const SEVERITY_CONFIG = {
     bg: 'bg-danger-light', 
     border: 'border-danger-mid', 
     text: 'text-danger', 
-    label: 'HIGH RISK', 
+    labelKey: 'docs.highRisk', 
     icon: AlertTriangle 
   },
   medium: { 
     bg: 'bg-warning-light', 
     border: 'border-warning-mid', 
     text: 'text-warning', 
-    label: 'MEDIUM RISK', 
+    labelKey: 'docs.mediumRisk', 
     icon: AlertCircle 
   },
 };
@@ -91,8 +91,8 @@ export default function DocumentIntelligence() {
               <h3 className="font-display font-bold text-lg text-text-primary mb-2">
                 {t('docs.upload')}
               </h3>
-              <p className="text-text-secondary text-sm font-body max-w-xs mx-auto mb-6">
-                {t('docs.uploadHint')}
+              <p className="text-text-secondary text-sm font-body max-w-xs mx-auto mb-6 whitespace-pre-line">
+                {t('docs.aiReadingModeDetail')}
               </p>
               <div className="flex items-center justify-center gap-2">
                 <span className="h-px w-8 bg-border-light" />
@@ -177,7 +177,7 @@ export default function DocumentIntelligence() {
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-0.5">
                             <span className={`text-[10px] font-bold uppercase tracking-wider ${sev.text}`}>
-                              Issue {issue.id} · {sev.label}
+                              {t('docs.issueLabel')} {issue.id} · {t(sev.labelKey)}
                             </span>
                           </div>
                           <h4 className="font-display font-bold text-[16px] text-text-primary">
@@ -198,13 +198,13 @@ export default function DocumentIntelligence() {
                           >
                             <div className="space-y-4">
                               <div className="bg-danger-light border-l-4 border-danger p-4 rounded-lg">
-                                <p className="text-text-secondary text-[10px] font-bold uppercase tracking-widest mb-1.5">Problematic Clause</p>
+                                <p className="text-text-secondary text-[10px] font-bold uppercase tracking-widest mb-1.5">{t('docs.problematicClause')}</p>
                                 <p className="text-text-primary text-sm font-mono leading-relaxed bg-white/50 p-2 rounded border border-danger-mid/30">
                                   {issue.clause}
                                 </p>
                               </div>
                               <div>
-                                <p className="text-text-secondary text-[10px] font-bold uppercase tracking-widest mb-1.5">The Reality</p>
+                                <p className="text-text-secondary text-[10px] font-bold uppercase tracking-widest mb-1.5">{t('docs.theReality')}</p>
                                 <p className="text-text-primary text-sm font-body leading-relaxed">
                                   {issue.explanation}
                                 </p>
@@ -225,30 +225,30 @@ export default function DocumentIntelligence() {
         <div className="col-span-2 space-y-4">
           {status === 'done' && (
             <div className="bg-white border border-border-light rounded-2xl p-6 shadow-card">
-              <h3 className="font-display font-bold text-text-primary text-[15px] mb-4">Document Meta</h3>
+              <h3 className="font-display font-bold text-text-primary text-[15px] mb-4">{t('docs.documentMeta')}</h3>
               <div className="space-y-3">
                 <div className="flex justify-between py-2 border-b border-app-bg">
-                  <span className="text-text-secondary text-xs font-body">Name</span>
+                  <span className="text-text-secondary text-xs font-body">{t('docs.name')}</span>
                   <span className="text-text-primary text-xs font-bold">{documentData.documentName}</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-app-bg">
-                  <span className="text-text-secondary text-xs font-body">Type</span>
+                  <span className="text-text-secondary text-xs font-body">{t('docs.type')}</span>
                   <span className="text-text-primary text-xs font-bold">{documentData.documentType}</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-app-bg">
-                  <span className="text-text-secondary text-xs font-body">Amount</span>
+                  <span className="text-text-secondary text-xs font-body">{t('docs.amount')}</span>
                   <span className="text-text-primary text-xs font-bold">₹{documentData.loanAmount.toLocaleString('en-IN')}</span>
                 </div>
                 <div className="flex justify-between py-2">
-                  <span className="text-text-secondary text-xs font-body">Tenure</span>
-                  <span className="text-text-primary text-xs font-bold">{documentData.tenureMonths} Months</span>
+                  <span className="text-text-secondary text-xs font-body">{t('docs.tenure')}</span>
+                  <span className="text-text-primary text-xs font-bold">{documentData.tenureMonths} {t('docs.months')}</span>
                 </div>
               </div>
 
               <div className="mt-6 p-4 bg-sidebar rounded-xl text-white">
                 <h4 className="font-display font-bold text-sm text-primary-light mb-2 flex items-center gap-2">
                   <Search size={14} />
-                  Recommendation
+                  {t('docs.recommendation')}
                 </h4>
                 <p className="text-slate-400 text-xs leading-relaxed font-body">
                   {documentData.recommendation}
@@ -260,12 +260,10 @@ export default function DocumentIntelligence() {
           <div className="bg-white border border-border-light rounded-2xl p-6 shadow-card">
             <h3 className="font-display font-bold text-text-primary text-[15px] mb-4 flex items-center gap-2">
               <FileText size={18} className="text-primary" />
-              AI Reading Mode
+              {t('docs.aiReadingMode')}
             </h3>
             <p className="text-text-secondary text-xs leading-relaxed font-body">
-              Financial documents are often written in complex "legalese" to hide high interest rates and fees.
-              <br /><br />
-              ArthSaathi AI extracts key numbers and flags predatory clauses so you don't get trapped in a debt cycle.
+              {t('docs.aiReadingModeDetail')}
             </p>
           </div>
         </div>

@@ -1,11 +1,19 @@
 import scamData from '../data/scam-keywords.json';
 
 export function analyzeMessage(text) {
-  const lower = text.toLowerCase();
+  // Strip spacing, punctuation, and zero-width characters
+  const normalized = text.toLowerCase()
+    .replace(/[\s\p{P}\u200B-\u200D\uFEFF]/gu, '');
+  
   const findings = [];
 
   for (const pattern of scamData.patterns) {
-    const matched = pattern.keywords.find((kw) => lower.includes(kw));
+    // Clean keyword targets to match normalized input
+    const matched = pattern.keywords.find(kw => {
+      const cleanKw = kw.toLowerCase().replace(/[\s\p{P}]/gu, '');
+      return normalized.includes(cleanKw);
+    });
+    
     if (matched) {
       findings.push({ ...pattern, matchedKeyword: matched });
     }

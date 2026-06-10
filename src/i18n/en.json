@@ -8,12 +8,23 @@
     "subgreeting": "Let me understand your financial world before I help.",
     "buildingProfile": "Building your Financial Fingerprint...",
     "fingerprintReady": "Your Financial Fingerprint is ready",
+    "getStarted": "Get Started",
     "questions": [
       "When did you last feel stressed about money?",
       "Do you prefer knowing every rupee, or roughly where things stand?",
-      "Have you ever invested money and regretted it?"
+      "Have you ever invested money and regretted it?",
+      "Do you have any emergency savings?",
+      "Do you track your monthly expenses?"
     ],
-    "skip": "Skip intro"
+    "options": [
+      ["Yes, often", "Sometimes", "Rarely", "Never"],
+      ["Every rupee", "Rough estimate", "Not at all"],
+      ["Yes, many times", "Once or twice", "Never"],
+      ["Yes, enough for 3+ months", "Yes, but less than 3 months", "No, nothing"],
+      ["Yes, every month", "Sometimes", "Never"]
+    ],
+    "skip": "Skip intro",
+    "questionOf": "Question {{current}} of {{total}}"
   },
   "dashboard": {
     "greeting": "Good evening, Rajesh",
@@ -27,7 +38,24 @@
     "growthZone": "Growth Zone",
     "recentTransactions": "Recent Transactions",
     "bufferNeeded": "You need 5,800 more to reach safety buffer",
-    "highRate": "High Rate"
+    "highRate": "High Rate",
+    "income": "Income",
+    "floor": "Floor",
+    "buffer": "Buffer",
+    "score": "Score",
+    "incomeTierBreakdown": "Income Tier Breakdown",
+    "schemeAlertLabel": "Scheme Alert",
+    "schemesFound": "3 government schemes found",
+    "schemesDetail": "Total potential benefits worth over ₹7.2 lakh. You are 97% likely to qualify.",
+    "viewSchemes": "View Schemes",
+    "viewAll": "View all",
+    "debtTracker": "Debt Tracker",
+    "quickCashLoan": "QuickCash Loan",
+    "moneyTap": "MoneyTap",
+    "combinedMonthlyEMI": "Combined Monthly EMI",
+    "thisMonth": "This month",
+    "survivalMinimum": "Survival minimum",
+    "currentSavings": "Current savings"
   },
   "scam": {
     "title": "Scam Firewall",
@@ -36,13 +64,25 @@
     "analyze": "Analyse",
     "analyzing": "Analysing...",
     "trySample": "Try a sample",
+    "clear": "Clear",
     "safe": "Looks Clean",
     "danger": "Scam Detected",
     "caution": "Use Caution",
     "detectedTechniques": "Manipulation techniques detected",
     "whatThisTeaches": "What this teaches you:",
     "teachingSummary": "Remember these three red flags: guaranteed returns are always a lie, urgency is manufactured to prevent thinking, and no legitimate scheme works through private WhatsApp groups.",
-    "poweredBy": "Powered by ArthSaathi AI"
+    "poweredBy": "Powered by ArthSaathi AI",
+    "howItWorks": "How it works",
+    "step1Desc": "Paste any WhatsApp message, job offer, or SMS that seems too good to be true.",
+    "step2Desc": "Our AI scans for psychological triggers like \"Urgency\", \"Guaranteed Returns\", and \"Unverified Links\".",
+    "step3Desc": "We provide the specific technique being used to manipulate you and the legal context.",
+    "proTipForRajesh": "Pro-Tip for Rajesh",
+    "proTipText": "Remember: If a job asks you to pay money to start working, it is 100% a scam. No legitimate company in India works this way.",
+    "highRisk": "HIGH RISK",
+    "lowRisk": "LOW RISK",
+    "detectedKeyword": "Detected keyword",
+    "legalContext": "Legal Context",
+    "noPatternsFound": "No common manipulation patterns found. However, always verify company registrations at sebi.gov.in before sharing any OTP or making payments."
   },
   "twin": {
     "title": "Financial Twin",
@@ -59,7 +99,13 @@
     "savingsAccount": "Savings account",
     "liquidFund": "Liquid fund",
     "difference": "Difference",
-    "poweredBy": "Powered by ArthSaathi AI"
+    "poweredBy": "Powered by ArthSaathi AI",
+    "investmentPlan": "Investment Plan",
+    "tenYearOutlook": "10-Year Outlook",
+    "pessimistic": "Pessimistic",
+    "median": "Median",
+    "optimistic": "Optimistic",
+    "year": "Year"
   },
   "schemes": {
     "title": "Your Scheme Matches",
@@ -68,7 +114,19 @@
     "timeRequired": "Time required",
     "back": "Back",
     "closingNote": "One afternoon. That's all it takes. This could save you from borrowing again if you're sick.",
-    "totalBenefits": "Total potential benefits"
+    "totalBenefits": "Total potential benefits",
+    "match": "Match",
+    "stepByStepGuide": "Step-by-Step Guide",
+    "whatYouNeed": "What you need",
+    "questions": "Questions?",
+    "visitNearestCSC": "Visit the nearest Common Service Centre (CSC) in Pune for free assistance with the application process.",
+    "applyOnline": "Apply Online",
+    "documents": {
+      "aadhar": "Aadhar Card",
+      "bankPassbook": "Bank Passbook",
+      "phoneNumber": "Phone Number",
+      "rationCard": "Ration Card"
+    }
   },
   "docs": {
     "title": "Document Intelligence",
@@ -88,19 +146,120 @@
     "viewDetail": "View full analysis",
     "summary30s": "30-second summary",
     "recommendation": "Recommendation",
-    "poweredBy": "Powered by ArthSaathi AI"
+    "poweredBy": "Powered by ArthSaathi AI",
+    "highRisk": "HIGH RISK",
+    "mediumRisk": "MEDIUM RISK",
+    "issueLabel": "Issue",
+    "documentMeta": "Document Meta",
+    "name": "Name",
+    "type": "Type",
+    "amount": "Amount",
+    "tenure": "Tenure",
+    "months": "Months",
+    "aiReadingMode": "AI Reading Mode",
+    "aiReadingModeDetail": "Financial documents are often written in complex \"legalese\" to hide high interest rates and fees.\n\nArthSaathi AI extracts key numbers and flags predatory clauses so you don't get trapped in a debt cycle.",
+    "problematicClause": "Problematic Clause",
+    "theReality": "The Reality"
   },
   "nav": {
     "home": "Home",
     "scam": "Scam Check",
     "twin": "Future",
     "schemes": "Schemes",
-    "docs": "Documents"
+    "docs": "Documents",
+    "healthScore": "Health Score",
+    "navigation": "Navigation",
+    "voiceNav": "Voice Nav",
+    "sayPageName": "Say a page name"
   },
   "voice": {
     "listening": "Listening...",
     "say": "Say a page name to navigate",
     "commands": ["home", "scam firewall", "financial twin", "schemes", "document"],
+    "commandsMap": {
+      "dashboard": ["home", "dashboard"],
+      "scam": ["scam firewall", "scam check", "spam"],
+      "twin": ["financial twin", "future"],
+      "schemes": ["schemes", "benefits", "government schemes"],
+      "docs": ["document intelligence", "documents", "file"]
+    },
     "navigatingTo": "Navigating to"
+  },
+  "boosts": {
+    "scam-detected": "+8 Fraud Awareness",
+    "scheme-viewed": "+6 Benefit Unlocked",
+    "document-analysed": "+7 Contract Literacy",
+    "twin-explored": "+4 Future Planning"
+  },
+  "scamPatterns": {
+    "guaranteed-returns": {
+      "technique": "False Promise of Safety",
+      "explanation": "No legitimate investment can legally guarantee returns. SEBI explicitly prohibits this. Anyone promising guaranteed returns is either lying or running an illegal scheme.",
+      "legalContext": "Prohibited under SEBI (Investment Advisers) Regulations, 2013"
+    },
+    "urgency": {
+      "technique": "Artificial Urgency (FOMO)",
+      "explanation": "Creating a fake deadline forces you to make a rushed decision without researching. Legitimate investments are available tomorrow. Fake ones need you to act before you think.",
+      "legalContext": "Common in Ponzi schemes and pump-and-dump operations"
+    },
+    "exclusivity": {
+      "technique": "False Exclusivity",
+      "explanation": "Making you feel specially chosen lowers your guard and makes you feel you'd be foolish to refuse. Real financial products don't work through secret WhatsApp groups.",
+      "legalContext": "Classic social engineering used in pyramid and MLM schemes"
+    },
+    "authority-impersonation": {
+      "technique": "Authority Impersonation",
+      "explanation": "Using RBI or SEBI's name creates false trust. The RBI does not approve individual investment schemes. SEBI does not endorse specific returns. Always verify at sebi.gov.in or rbi.org.in directly.",
+      "legalContext": "Impersonating government bodies is a criminal offense under IPC Section 416"
+    },
+    "social-proof": {
+      "technique": "Fake Social Proof",
+      "explanation": "Claiming thousands of happy investors creates a herd mentality. These numbers are unverifiable. In Ponzi schemes, early investors do genuinely earn — until the scheme collapses and everyone else loses.",
+      "legalContext": "Fraudulent misrepresentation under IPC Section 420"
+    }
+  },
+  "schemesData": {
+    "pmjay": {
+      "name": "Ayushman Bharat PM-JAY",
+      "benefit": "₹5 lakh health coverage",
+      "description": "Free health insurance of ₹5 lakh per year for hospitalisation",
+      "steps": [
+        { "title": "Find your nearest CSC centre", "detail": "Visit locator.csccloud.in — there are 3 centres within 5km of your PIN code (411001)." },
+        { "title": "Carry these documents", "detail": "Aadhaar card (original + copy), ration card if available, income proof (any 2 Zomato/Swiggy payment screenshots)." },
+        { "title": "Get your e-card generated", "detail": "The CSC operator will verify your eligibility on PMJAY portal and generate your Golden Card on the spot." },
+        { "title": "Download and save the e-card", "detail": "Save the card PDF to your phone. You can also access it anytime at beneficiary.nha.gov.in" }
+      ]
+    },
+    "epfo": {
+      "name": "EPFO Unorganised Worker Registration",
+      "benefit": "₹2 lakh accident cover + future pension",
+      "description": "National database for unorganised workers with accident insurance and social security benefits",
+      "steps": [
+        { "title": "Go to eshram.gov.in", "detail": "Open on your phone browser. No app needed." },
+        { "title": "Register with Aadhaar + mobile OTP", "detail": "Your mobile number must be linked to Aadhaar. If not, update at nearest Aadhaar centre first." },
+        { "title": "Fill occupation details", "detail": "Select 'Transport' → 'Delivery Worker' from the dropdown. Add your bank account for future benefit transfers." },
+        { "title": "Download your e-SHRAM card", "detail": "UAN (Universal Account Number) is generated instantly. The ₹2 lakh accident cover is active immediately." }
+      ]
+    },
+    "pmsby": {
+      "name": "Pradhan Mantri Suraksha Bima Yojana",
+      "benefit": "₹2 lakh accident insurance @ ₹20/year",
+      "description": "Accidental death and disability insurance for ₹20 per year — cheapest insurance in India",
+      "steps": [
+        { "title": "Open your bank's app or visit branch", "detail": "Available at all public sector banks and most private banks. Can be done in net banking under 'Insurance' tab." },
+        { "title": "Select PMSBY and link your savings account", "detail": "₹20 is auto-debited from your account on June 1 each year. That's less than one delivery order." },
+        { "title": "Note your policy number", "detail": "Save the SMS confirmation. Nominees can claim ₹2 lakh in case of accidental death or full disability." }
+      ]
+    }
+  },
+  "transactions": {
+    "zomato payout": "Zomato payout",
+    "rent": "Rent",
+    "swiggy payout": "Swiggy payout",
+    "earlysalary repayment": "EarlySalary repayment",
+    "grocery - bigbazaar": "Grocery - BigBazaar",
+    "phone recharge": "Phone recharge",
+    "fuel": "Fuel",
+    "moneytap loan interest": "MoneyTap loan interest"
   }
 }

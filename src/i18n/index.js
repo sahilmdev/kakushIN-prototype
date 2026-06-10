@@ -3,12 +3,26 @@ import { initReactI18next } from 'react-i18next';
 import en from './en.json';
 import hi from './hi.json';
 import mr from './mr.json';
+import bn from './bn.json';
+import ta from './ta.json';
+import te from './te.json';
+import gu from './gu.json';
+import kn from './kn.json';
+import ml from './ml.json';
+import pa from './pa.json';
 
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
     hi: { translation: hi },
     mr: { translation: mr },
+    bn: { translation: bn },
+    ta: { translation: ta },
+    te: { translation: te },
+    gu: { translation: gu },
+    kn: { translation: kn },
+    ml: { translation: ml },
+    pa: { translation: pa },
   },
   lng: 'en',
   fallbackLng: 'en',
@@ -16,3 +30,4 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
+

@@ -1,25 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-const VOICE_ROUTES = {
-  'home': '/dashboard',
-  'dashboard': '/dashboard',
-  'scam': '/scam',
-  'scam firewall': '/scam',
-  'fraud': '/scam',
-  'financial twin': '/twin',
-  'twin': '/twin',
-  'future': '/twin',
-  'schemes': '/schemes',
-  'scheme': '/schemes',
-  'yojana': '/schemes',
-  'document': '/docs',
-  'documents': '/docs',
-  'dastaavej': '/docs',
+// Map of language codes to SpeechRecognition language codes
+const LANGUAGE_MAP = {
+  en: 'en-IN',
+  hi: 'hi-IN',
+  mr: 'mr-IN',
+  bn: 'bn-IN',
+  ta: 'ta-IN',
+  te: 'te-IN',
+  gu: 'gu-IN',
+  kn: 'kn-IN',
 };
 
 export function useVoiceNav() {
   const navigate = useNavigate();
+  const { i18n, t } = useTranslation();
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [supported, setSupported] = useState(false);
@@ -35,7 +32,7 @@ export function useVoiceNav() {
     if (!SpeechRecognition) return;
 
     const recognition = new SpeechRecognition();
-    recognition.lang = 'en-IN';
+    recognition.lang = LANGUAGE_MAP[i18n.language] || 'en-IN';
     recognition.interimResults = false;
     recognition.maxAlternatives = 3;
 
@@ -48,11 +45,16 @@ export function useVoiceNav() {
     recognition.onresult = (event) => {
       const spoken = event.results[0][0].transcript.toLowerCase().trim();
       setTranscript(spoken);
-      for (const [phrase, path] of Object.entries(VOICE_ROUTES)) {
-        if (spoken.includes(phrase)) {
-          setNavigatedTo(phrase);
+      
+      // Get voice commands from translations
+      const commandsMap = t('voice.commandsMap', { returnObjects: true });
+      
+      // Check for matches against each route's keywords
+      for (const [route, keywords] of Object.entries(commandsMap)) {
+        if (keywords.some(keyword => spoken.includes(keyword.toLowerCase()))) {
+          setNavigatedTo(keywords[0]);
           setTimeout(() => {
-            navigate(path);
+            navigate(`/${route}`);
             setNavigatedTo('');
           }, 800);
           return;

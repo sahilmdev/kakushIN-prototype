@@ -18,7 +18,7 @@ function App() {
       {showNav && <NavBar />}
       
       <main className="flex-1 overflow-y-auto">
-        <div className="max-w-content mx-auto px-8 py-7">
+        <div className="max-w-content mx-auto px-8 py-7 pb-[90px] md:pb-7">
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Onboarding />} />

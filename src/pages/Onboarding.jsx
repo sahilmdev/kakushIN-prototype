@@ -9,6 +9,8 @@ export default function Onboarding() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [phase, setPhase] = useState('welcome'); // welcome, questions, building, reveal, done
+  const questions = t('onboarding.questions', { returnObjects: true });
+  const totalQuestions = questions.length;
 
   // Welcome → Questions
   const startOnboarding = () => setPhase('questions');
@@ -16,7 +18,7 @@ export default function Onboarding() {
   // Questions logic (simplified for prototype)
   const [currentQ, setCurrentQ] = useState(0);
   const nextQuestion = () => {
-    if (currentQ < 2) setCurrentQ(currentQ + 1);
+    if (currentQ < totalQuestions - 1) setCurrentQ(currentQ + 1);
     else setPhase('building');
   };
 
@@ -52,7 +54,7 @@ export default function Onboarding() {
               onClick={startOnboarding}
               className="w-full bg-primary hover:bg-primary-dark text-white font-body font-bold py-4 rounded-2xl shadow-blue transition-all flex items-center justify-center gap-2 group"
             >
-              Get Started
+              {t('onboarding.getStarted')}
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <div className="mt-6">
@@ -70,22 +72,22 @@ export default function Onboarding() {
             className="max-w-lg w-full bg-white border border-border-light rounded-3xl p-10 shadow-modal"
           >
             <div className="flex justify-between items-center mb-8">
-              <span className="text-primary text-xs font-bold uppercase tracking-widest">Question {currentQ + 1} of 3</span>
+              <span className="text-primary text-xs font-bold uppercase tracking-widest">{t('onboarding.questionOf', { current: currentQ + 1, total: totalQuestions })}</span>
               <div className="flex gap-1">
-                {[0, 1, 2].map(i => (
+                {Array.from({ length: totalQuestions }).map((_, i) => (
                   <div key={i} className={`h-1 w-8 rounded-full transition-all ${i <= currentQ ? 'bg-primary' : 'bg-app-bg'}`} />
                 ))}
               </div>
             </div>
             
             <h2 className="font-display text-2xl font-bold text-text-primary mb-8 leading-tight">
-              {t(`onboarding.questions.${currentQ}`)}
+              {questions[currentQ]}
             </h2>
 
             <div className="space-y-3">
-              {['Yes, often', 'Sometimes', 'Rarely', 'Never'].map((opt) => (
+              {t(`onboarding.options.${currentQ}`, { returnObjects: true }).map((opt, idx) => (
                 <button
-                  key={opt}
+                  key={idx}
                   onClick={nextQuestion}
                   className="w-full text-left p-4 rounded-xl border border-border-light hover:border-primary hover:bg-primary-light transition-all font-body text-text-primary font-medium"
                 >
