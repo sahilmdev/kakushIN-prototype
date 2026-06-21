@@ -25,7 +25,7 @@ export default function Onboarding() {
   // Auto-progress building phase
   useEffect(() => {
     if (phase === 'building') {
-      const timer = setTimeout(() => navigate('/dashboard'), 2000);
+      const timer = setTimeout(() => navigate('/user/dashboard'), 2000);
       return () => clearTimeout(timer);
     }
   }, [phase, navigate]);

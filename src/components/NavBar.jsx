@@ -1,15 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Home, ShieldAlert, TrendingUp, Landmark, FileText } from 'lucide-react';
+import { Home, ShieldAlert, TrendingUp, Landmark, FileText, Settings } from 'lucide-react';
 import { useHealthScoreContext } from '../context/HealthScoreContext';
 import rajeshData from '../data/rajesh.json';
 
 const TABS = [
-  { path: '/dashboard', icon: Home, labelKey: 'nav.home' },
-  { path: '/scam', icon: ShieldAlert, labelKey: 'nav.scam' },
-  { path: '/twin', icon: TrendingUp, labelKey: 'nav.twin' },
-  { path: '/schemes', icon: Landmark, labelKey: 'nav.schemes', badge: 3 },
-  { path: '/docs', icon: FileText, labelKey: 'nav.docs' },
+  { path: '/user/dashboard', icon: Home, labelKey: 'nav.home' },
+  { path: '/user/scam', icon: ShieldAlert, labelKey: 'nav.scam' },
+  { path: '/user/twin', icon: TrendingUp, labelKey: 'nav.twin' },
+  { path: '/user/schemes', icon: Landmark, labelKey: 'nav.schemes', badge: 3 },
+  { path: '/user/docs', icon: FileText, labelKey: 'nav.docs' },
 ];
 
 export default function NavBar() {
@@ -97,6 +97,17 @@ export default function NavBar() {
             ))}
           </div>
         </nav>
+
+        {/* Switch to Admin Link */}
+        <div className="p-3 border-t border-white/5">
+          <Link
+            to="/admin"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all text-[13px] font-medium font-body text-slate-400 hover:bg-sidebar-hover hover:text-slate-200"
+          >
+            <Settings size={18} />
+            <span className="flex-1">Switch to Admin</span>
+          </Link>
+        </div>
       </aside>
 
       {/* Mobile Navigation Tab Bar (hidden on desktop) */}

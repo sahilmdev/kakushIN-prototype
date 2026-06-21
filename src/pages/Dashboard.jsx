@@ -33,7 +33,7 @@ export default function Dashboard() {
     >
       <PageHeader 
         title={t('dashboard.greeting')} 
-        subtitle="Monday, 25 November · Pune" 
+        subtitle="Sunday, 21 June · Pune" 
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -130,7 +130,7 @@ export default function Dashboard() {
             </p>
           </div>
           <button 
-            onClick={() => navigate('/schemes')}
+            onClick={() => navigate('/user/schemes')}
             className="mt-4 bg-primary hover:bg-primary-dark text-white font-body text-[14px] font-semibold px-4 py-2.5 rounded-xl shadow-blue transition-all"
           >
             {t('dashboard.viewSchemes')} →

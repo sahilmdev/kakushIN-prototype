@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sr001",
+    "reportedBy": "Meena Sawant",
+    "userId": "u002",
+    "date": "2026-06-19",
+    "message": "🔥 SEBI APPROVED — Earn ₹50,000/month from home! Guaranteed 45% returns. Limited offer, only 5 spots left. WhatsApp NOW: +91-98XXXXXXXX",
+    "detectedTechniques": ["Guaranteed Returns", "Artificial Urgency", "Authority Impersonation"],
+    "verdict": "SCAM",
+    "severity": "high",
+    "status": "pending-review",
+    "entityChecked": "Not registered with SEBI",
+    "communityMatches": 23
+  },
+  {
+    "id": "sr002",
+    "reportedBy": "Sunita Bhosale",
+    "userId": "u004",
+    "date": "2026-06-18",
+    "message": "Govt approved investment scheme for delivery partners. PM Modi's new plan gives ₹2,000/month extra income. Register on this link today.",
+    "detectedTechniques": ["Authority Impersonation", "False Government Association"],
+    "verdict": "SCAM",
+    "severity": "high",
+    "status": "pending-review",
+    "entityChecked": "No such government scheme exists",
+    "communityMatches": 41
+  },
+  {
+    "id": "sr003",
+    "reportedBy": "Arun Patil",
+    "userId": "u003",
+    "date": "2026-06-16",
+    "message": "Mutual fund offering 12% annual returns. SEBI registered. No lock-in period. Start with ₹500/month.",
+    "detectedTechniques": [],
+    "verdict": "LIKELY SAFE",
+    "severity": "low",
+    "status": "reviewed",
+    "entityChecked": "Verified SEBI registration found",
+    "communityMatches": 0
+  }
+]

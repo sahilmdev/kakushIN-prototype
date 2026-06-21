@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pmsby",
+    "name": "Pradhan Mantri Suraksha Bima Yojana",
+    "shortName": "PMSBY",
+    "benefit": "₹2 lakh accident insurance @ ₹20/year",
+    "status": "active",
+    "lastVerified": "2026-06-01",
+    "enrolledInPlatform": 834,
+    "eligibilityCriteria": "Age 18-70, active bank account",
+    "source": "jansuraksha.gov.in",
+    "notes": ""
+  },
+  {
+    "id": "eshram",
+    "name": "e-SHRAM Portal Registration",
+    "shortName": "e-SHRAM",
+    "benefit": "₹2 lakh accident cover + social security",
+    "status": "active",
+    "lastVerified": "2026-06-10",
+    "enrolledInPlatform": 712,
+    "eligibilityCriteria": "Unorganised sector worker, Aadhaar + mobile",
+    "source": "eshram.gov.in",
+    "notes": ""
+  },
+  {
+    "id": "pmjay",
+    "name": "Ayushman Bharat PM-JAY",
+    "shortName": "PM-JAY",
+    "benefit": "₹5 lakh health coverage per year",
+    "status": "active",
+    "lastVerified": "2026-05-28",
+    "enrolledInPlatform": 489,
+    "eligibilityCriteria": "Below poverty threshold, no existing health insurance",
+    "source": "pmjay.gov.in",
+    "notes": "Eligibility threshold updated May 2026"
+  },
+  {
+    "id": "pmsym",
+    "name": "PM Shram Yogi Maandhan",
+    "shortName": "PMSYM",
+    "benefit": "₹3,000/month pension after age 60",
+    "status": "needs-review",
+    "lastVerified": "2026-03-10",
+    "enrolledInPlatform": 123,
+    "eligibilityCriteria": "Unorganised worker, age 18-40, monthly income < ₹15,000",
+    "source": "maandhan.in",
+    "notes": "Criteria may have changed — needs re-verification"
+  }
+]

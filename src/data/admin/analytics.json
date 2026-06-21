@@ -1,0 +1,53 @@
+{
+  "overview": {
+    "totalUsers": 847,
+    "activeThisWeek": 312,
+    "avgHealthScore": 58,
+    "avgHealthScoreChange": "+11",
+    "scamAlertsTotal": 1247,
+    "scamAlertsSaved": "₹84,30,000",
+    "schemesUnlocked": 2341,
+    "schemeValueUnlocked": "₹18,72,00,000",
+    "docsAnalysed": 634,
+    "hiddenClausesFlagged": 1891
+  },
+  "healthScoreDistribution": [
+    { "range": "0–20", "label": "Critical", "count": 43, "pct": 5 },
+    { "range": "21–40", "label": "At Risk", "count": 152, "pct": 18 },
+    { "range": "41–60", "label": "Developing", "count": 296, "pct": 35 },
+    { "range": "61–80", "label": "Stable", "count": 271, "pct": 32 },
+    { "range": "81–100", "label": "Strong", "count": 85, "pct": 10 }
+  ],
+  "weeklyActiveUsers": [
+    { "week": "Apr W1", "users": 48 },
+    { "week": "Apr W2", "users": 91 },
+    { "week": "Apr W3", "users": 134 },
+    { "week": "Apr W4", "users": 178 },
+    { "week": "May W1", "users": 201 },
+    { "week": "May W2", "users": 224 },
+    { "week": "May W3", "users": 267 },
+    { "week": "May W4", "users": 289 },
+    { "week": "Jun W1", "users": 301 },
+    { "week": "Jun W2", "users": 312 }
+  ],
+  "topSchemesUnlocked": [
+    { "name": "PMSBY", "count": 834, "valuePerUser": "₹2,00,000 cover" },
+    { "name": "e-SHRAM", "count": 712, "valuePerUser": "₹2,00,000 cover" },
+    { "name": "PM-JAY", "count": 489, "valuePerUser": "₹5,00,000 cover" },
+    { "name": "Ayushman Bharat", "count": 183, "valuePerUser": "₹5,00,000 cover" },
+    { "name": "PMSYM", "count": 123, "valuePerUser": "₹3,000/month pension" }
+  ],
+  "scamTypeBreakdown": [
+    { "type": "Guaranteed Returns", "count": 487, "pct": 39 },
+    { "type": "Artificial Urgency", "count": 312, "pct": 25 },
+    { "type": "Authority Impersonation", "count": 274, "pct": 22 },
+    { "type": "False Exclusivity", "count": 112, "pct": 9 },
+    { "type": "Fake Social Proof", "count": 62, "pct": 5 }
+  ],
+  "avgScoreByMonth": [
+    { "month": "Mar", "score": 43 },
+    { "month": "Apr", "score": 47 },
+    { "month": "May", "score": 52 },
+    { "month": "Jun", "score": 58 }
+  ]
+}
