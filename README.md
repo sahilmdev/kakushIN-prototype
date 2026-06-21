@@ -1,4 +1,4 @@
-# ArthSaathi Prototype
+# ArthSaathi 
 
 ArthSaathi is a mobile-first financial literacy and companion application designed for underserved communities in India. Using the persona of Rajesh, a 34-year-old gig economy driver in Pune, the prototype demonstrates localized financial health metrics, scam detection, government scheme matching, interactive long-term planning, and document analysis.
 
